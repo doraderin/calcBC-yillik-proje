@@ -1,21 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20277.gif");
+    background-image: url("https://inkcaps.neocities.org/assets/background/star.gif");
 }
 
+a{
+    color:aliceblue;
+}
 .container {
     text-align: center; 
 }
 
 h1 {
     margin-bottom: 20px;
+    color:aliceblue
 }
 
 input[type="text"] {
@@ -23,13 +22,13 @@ input[type="text"] {
     padding: 10px;
     margin-bottom: 20px;
     font-size: 16px;
-    border: 2px solid #ddd;
+    color: #211253;;
     border-radius: 5px;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #4b2aab;
     color: white;
     font-size: 16px;
     border: none;
@@ -38,11 +37,11 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #360c69;
 }
 
 canvas {
     border: 1px solid #ccc;
-    background-color: white;
+    background-color: #000000;
     margin-top: 20px;
 }

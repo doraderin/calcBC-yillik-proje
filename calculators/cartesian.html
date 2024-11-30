@@ -7,9 +7,16 @@
 <body>
     <div class="container">
         <h1>Graphing Calculator</h1>
-        <label for="expression">Enter expression (in terms of x):</label>
-        <input type="text" id="expression" placeholder="e.g. x+2">
-        <button onclick="drawGraph()">Draw Graph</button>
+        <div>
+            <a>Enter equation 1:</a>
+            <input type="text" id="expression"> <br>
+
+            <a>Enter equation 2:</a>
+            <input type="text" id="expression2"> <br>
+
+            <button onclick="drawGraph()">Draw Graph</button>
+        </div>
+        
         <canvas id="graphCanvas" width="800" height="600"></canvas>
     </div>
     <script src="script.js"></script>
