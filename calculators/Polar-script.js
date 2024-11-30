@@ -12,27 +12,27 @@ function drawGraph() {
         return;
     }
 
-    // Replace 'x' with 'x1' for both equations
-    const expr1 = equation1Input.replace(/x/g, "x1");
-    const expr2 = equation2Input.replace(/x/g, "x1");
+    // Replace 'x' with 'theta' in both equations (polar)
+    const expr1 = equation1Input.replace(/x/g, "theta");
+    const expr2 = equation2Input.replace(/x/g, "theta");
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clears the entire canvas to update the graph
 
-    drawAxes();
+    drawAxes();  // Draw axes
 
-    // Graphing range, division by 2 gets center
-    const startX = -canvas.width / 2;
-    const endX = canvas.width / 2;
-    const step = 10;
+    // Graphing range for angles (theta)
+    const startTheta = 0;
+    const endTheta = Math.PI * 2;  // One full rotation (0 to 2π)
+    const step = 0.01;  // Smaller step for smooth graph
 
-    // Graph for equation 1
+    // Graph for equation 1 (polar)
     ctx.beginPath();
-    for (let x = startX; x <= endX; x += step) {
-        const y = evaluateExpression(expr1, x);  // Compute the y-value for the first equation
-        const screenX = x + canvas.width / 2;
-        const screenY = -y + canvas.height / 2;
+    for (let theta = startTheta; theta <= endTheta; theta += step) {
+        const r = evaluateExpression(expr1, theta);  // Compute r for the first equation
+        const screenX = r * Math.cos(theta) + canvas.width / 2;  // Convert polar to Cartesian x
+        const screenY = r * Math.sin(theta) + canvas.height / 2;  // Convert polar to Cartesian y
 
-        if (x === startX) {
+        if (theta === startTheta) {
             ctx.moveTo(screenX, screenY);
         } else {
             ctx.lineTo(screenX, screenY);
@@ -41,36 +41,36 @@ function drawGraph() {
     ctx.strokeStyle = "violet";  // Color for the first equation
     ctx.stroke();
 
-    // Graph for equation 2
+    // Graph for equation 2 (polar)
     ctx.beginPath();
-    for (let x = startX; x <= endX; x += step) {
-        const y = evaluateExpression(expr2, x);  // Compute the y-value for the second equation
-        const screenX = x + canvas.width / 2;
-        const screenY = -y + canvas.height / 2;
+    for (let theta = startTheta; theta <= endTheta; theta += step) {
+        const r = evaluateExpression(expr2, theta);  // Compute r for the second equation
+        const screenX = r * Math.cos(theta) + canvas.width / 2;  // Convert polar to Cartesian x
+        const screenY = r * Math.sin(theta) + canvas.height / 2;  // Convert polar to Cartesian y
 
-        if (x === startX) {
+        if (theta === startTheta) {
             ctx.moveTo(screenX, screenY);
         } else {
             ctx.lineTo(screenX, screenY);
         }
     }
-    ctx.strokeStyle = "#7a80e9 ";  // Color for the second equation
+    ctx.strokeStyle = "#7a80e9";  // Color for the second equation
     ctx.stroke();
 }
 
 // Function to evaluate the mathematical expression
-function evaluateExpression(expr, x) {
+function evaluateExpression(expr, theta) {
     // Using a simple method to safely evaluate the expression
-    const x1 = x;
+    const x = theta;
     try {
-        return eval(expr);  // Evaluates the expression for each value of x
+        return eval(expr);  // Evaluates the expression for each value of theta (polar)
     } catch (e) {
         alert("Invalid expression");
         return 0;
     }
 }
 
-// Function to draw axes
+//draws the axis
 function drawAxes() {
     ctx.beginPath();
     // X-axis (horizontal)

@@ -3,11 +3,16 @@
 <head>
     <title>Graphing Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/Users/doratasci/Documents/GitHub/calcBC-yillik-proje/calcIcon.png">
 </head>
 <body>
+    <a href="/Users/doratasci/Documents/GitHub/calcBC-yillik-proje/welcome.html">
+        <img src="https://bettysgraphics.neocities.org/images/objects/plane%2014.gif">
+    </a>
+
     <div class="container">
         <h1>Graphing Calculator</h1>
-        
+
         <div>
             <a>Enter equation 1:</a>
             <input type="text" id="expression"> <br>
@@ -18,7 +23,7 @@
             <button onclick="drawGraph()">Draw Graph</button>
         </div>
         
-        <canvas id="graphCanvas" width="800" height="600"></canvas>
+        <canvas id="graphCanvas" width="300" height="400"></canvas>
     </div>
     <script src="script.js"></script>
 </body>

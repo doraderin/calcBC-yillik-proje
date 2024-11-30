@@ -41,6 +41,8 @@ button:hover {
 }
 
 canvas {
+    width: 600px; /* Fixed width for canvas */
+    height: 600px; /* Fixed height for canvas */
     border: 1px solid #ccc;
     background-color: #000000;
     margin-top: 20px;
