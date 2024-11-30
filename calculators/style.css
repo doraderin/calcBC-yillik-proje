@@ -6,12 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     padding: 20px;
+    background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20277.gif");
 }
 
 .container {
-    text-align: center;
+    text-align: center; 
 }
 
 h1 {

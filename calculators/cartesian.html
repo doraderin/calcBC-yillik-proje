@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graphing Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,11 +8,10 @@
     <div class="container">
         <h1>Graphing Calculator</h1>
         <label for="expression">Enter expression (in terms of x):</label>
-        <input type="text" id="expression" placeholder="e.g. x*x, sin(x), x+2">
+        <input type="text" id="expression" placeholder="e.g. x+2">
         <button onclick="drawGraph()">Draw Graph</button>
         <canvas id="graphCanvas" width="800" height="600"></canvas>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
