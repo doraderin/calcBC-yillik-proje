@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-image: url("https://inkcaps.neocities.org/assets/background/star.gif");
+    background-color: #000000;
 }
 
 a{
@@ -33,7 +34,6 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 button:hover {

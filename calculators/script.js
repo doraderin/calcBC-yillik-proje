@@ -23,7 +23,7 @@ function drawGraph() {
     // Graphing range, division by 2 gets center
     const startX = -canvas.width / 2;
     const endX = canvas.width / 2;
-    const step = 10;
+    const step = 0.01;
 
     // Graph for equation 1
     ctx.beginPath();
