@@ -22,7 +22,7 @@ function drawGraph() {
     function plotTheGraph(expr, lineColor){
         ctx.beginPath();
         for (let x = startX; x <= endX; x += step) {
-            const y = eval(expr); 
+            const y = evaluateExpression(expr, x); 
             const screenX = x + canvas.width / 2;
             const screenY = -y + canvas.height / 2;
     
