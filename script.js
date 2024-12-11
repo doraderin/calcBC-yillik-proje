@@ -22,7 +22,7 @@ function drawGraph() {
     function plotTheGraph(expr, lineColor){
         ctx.beginPath();
         for (let x = startX; x <= endX; x += step) {
-            const y = evaluateExpression(expr, x); 
+            const y = eval(expr); 
             const screenX = x + canvas.width / 2;
             const screenY = -y + canvas.height / 2;
     
@@ -40,7 +40,7 @@ function drawGraph() {
 function evaluateExpression(expr, x) {
     const x1 = x;
     try {
-        return eval(expr);  x
+        return eval(expr); 
     } catch (e) {
         alert("Invalid expression");
         return 0;
