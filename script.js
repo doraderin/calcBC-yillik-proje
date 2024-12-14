@@ -6,11 +6,8 @@ function drawGraph() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
     drawAxes();
 
-    const equation1Input = document.getElementById("expression").value;  
-    const equation2Input = document.getElementById("expression2").value;  
-
-    const expr1 = equation1Input.replace(/x/g, "x1");
-    const expr2 = equation2Input.replace(/x/g, "x1");
+    const expr1 = document.getElementById("expression").value;  
+    const expr2 = document.getElementById("expression2").value;  
 
     const startX = -canvas.width / 2;
     const endX = canvas.width / 2;
@@ -21,12 +18,13 @@ function drawGraph() {
 
     function plotTheGraph(expr, lineColor){
         ctx.beginPath();
-        for (let x = startX; x <= endX; x += step) {
-            const y = evaluateExpression(expr, x); 
-            const screenX = x + canvas.width / 2;
+        for (let xPoint = startX; xPoint <= endX; xPoint += step) {
+            const y = evaluateExpression(expr, xPoint); 
+            if(y==null) return;
+            const screenX = xPoint + canvas.width / 2;
             const screenY = -y + canvas.height / 2;
     
-            if (x === startX) {
+            if (xPoint === startX) {
                 ctx.moveTo(screenX, screenY);
             } else {
                 ctx.lineTo(screenX, screenY);
@@ -38,12 +36,11 @@ function drawGraph() {
 }
 
 function evaluateExpression(expr, x) {
-    const x1 = x;
     try {
-        return eval(expr); 
+        return eval(expr,x); 
     } catch (e) {
         alert("Invalid expression");
-        return 0;
+        return null;
     }
 }
 
