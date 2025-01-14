@@ -3,6 +3,10 @@ const ctx = canvas.getContext("2d");
 
 let scale = 1;
 let endTheta = 2 * Math.PI;
+const range = document.getElementById("range").value;  
+if (range != null){
+    endTheta = range
+}
 
 function drawGraph() {
 
