@@ -1,6 +1,8 @@
 const canvas = document.getElementById("graphCanvas");
 const ctx = canvas.getContext("2d");
 
+let scale = 1;
+
 function drawGraph() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
@@ -21,8 +23,8 @@ function drawGraph() {
         for (let xPoint = startX; xPoint <= endX; xPoint += step) {
             const y = evaluateExpression(expr, xPoint); 
             if(y==null) return;
-            const screenX = xPoint + canvas.width / 2;
-            const screenY = -y + canvas.height / 2;
+            const screenX = xPoint * scale + canvas.width / 2;
+            const screenY = -y * scale + canvas.height / 2;
     
             if (xPoint === startX) {
                 ctx.moveTo(screenX, screenY);
@@ -52,4 +54,10 @@ function drawAxes() {
     ctx.lineTo(canvas.width / 2, canvas.height);
     ctx.strokeStyle = "white";
     ctx.stroke();
+}
+
+
+function zoomIn() {
+    scale *= 1.5; 
+    drawGraph(); 
 }
