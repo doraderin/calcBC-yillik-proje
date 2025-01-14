@@ -1,6 +1,8 @@
 const canvas = document.getElementById("graphCanvas");
 const ctx = canvas.getContext("2d");
 
+let scale = 1;
+
 function drawGraph() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
