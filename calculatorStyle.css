@@ -47,3 +47,7 @@ canvas {
     background-color: #000000;
     margin-top: 20px;
 }
+
+input::placeholder {
+    color: grey;
+}
