@@ -2,6 +2,7 @@ const canvas = document.getElementById("graphCanvas");
 const ctx = canvas.getContext("2d");
 
 let scale = 1;
+let endTheta = 2 * Math.PI;
 
 function drawGraph() {
 
@@ -12,9 +13,7 @@ function drawGraph() {
     const expr2 = document.getElementById("expression2").value;  
 
     const startTheta = 0;
-    const endTheta = 2 * Math.PI;
     const step = 0.01;
-
 
     plotPolarGraph(expr1, "violet")
     plotPolarGraph(expr2, "#7a80e9")
@@ -36,7 +35,6 @@ function drawGraph() {
         ctx.strokeStyle = lineColor;  
         ctx.stroke();
     }
-
 }
 
 function evaluateExpression(expr, x) {
